@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="icat">
+    <ion-title>Matr&iacute;cula atendida</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="icat">
+    <ion-title>Corte al: {{fecha}}</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <p *ngIf="!listaMatriculaUnidad">No hay conexi&oacute;n con el servidor de datos</p>
+    <ion-card *ngFor="let detalleUnidad of listaMatriculaUnidad" class="fondo_card">
+      <ion-card-header>
+        <h2>{{detalleUnidad.unidad}}</h2>
+      </ion-card-header>
+
+      <ion-card-content>
+
+          <ion-grid>
+            <ion-row justify-content-center>
+              <ion-col text-center col-4>
+                <h1>{{detalleUnidad.metaAcumTotal | number:0}}</h1>
+                <h2>Meta</h2>
+              </ion-col>
+              <ion-col text-center col-4>
+                <h1>{{detalleUnidad.inscritosTotal | number:0}}</h1>
+                <h2>Inscritos</h2>
+              </ion-col>
+              <ion-col text-center col-4>
+                <h1>{{detalleUnidad.gruposTotal | number:0}}</h1>
+                <h2>Grupos</h2>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+      </ion-card-content>
+
+      <ion-item actions class="fondo-footer-card">
+        <button ion-button color="icat_cafe" item-right icon-right (click)="verDetalle(detalleUnidad)">
+          Ver desglose
+          <ion-icon name='arrow-forward'></ion-icon>
+        </button>
+      </ion-item>
+
+    </ion-card>
+
+</ion-content>

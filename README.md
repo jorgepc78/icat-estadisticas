@@ -1,4 +1,4 @@
-## ICAT Estadisticas Ionic 2 app
+## ICAT Estadisticas Ionic 3 app
 
 App móvil hecha con Ionic 3. Muestra estadística básica del total de alumnos y grupos registrados en el sistema de control escolar del ICAT. Esta aplicación se conecta al REST API del sistema de control escolar.
 
